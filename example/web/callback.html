@@ -1,0 +1,26 @@
+<html>
+
+<body>
+
+    <script>
+
+        // Tìm tham số code 
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+
+        // Lấy URL gốc
+        const url = new URL(window.location);
+        const baseUrl = `${url.protocol}//${url.host}`;
+
+        // Tạo URL mới 
+        const newUrl = `${baseUrl}/callback?code=${code}`;
+
+        // Redirect 
+        window.location.href = newUrl;
+
+
+    </script>
+
+</body>
+
+</html>
